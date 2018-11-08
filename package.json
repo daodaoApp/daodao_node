@@ -1,0 +1,28 @@
+{
+  "name": "daodao_node",
+  "version": "1.0.0",
+  "description": "打卡统计软件nodejs后端服务",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daodaoApp/daodao_node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daodaoApp/daodao_node/issues"
+  },
+  "homepage": "https://github.com/daodaoApp/daodao_node#readme",
+  "dependencies": {
+    "koa": "^2.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}

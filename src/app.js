@@ -1,13 +1,31 @@
 const Koa = require('koa');
-const config = require('./config.js');
-const app = new Koa()
-const log = require('./debugTools')
 const bodyParser = require('koa-bodyparser');
+const router = require('koa-router')();
+const controller = require('./controller');
+const config = require('./config.js');
+const log = require('./debugTools')
 
+const app = new Koa()
 
 app.use(bodyParser())
 
-app.use()
+const isProduction = process.env.NODE_ENV === 'production';
+
+app.use((ctx, next) => {
+  console.log('Process ' + ctx.request.method + ' ' + ctx.request.url);
+    const startTime = Date.now();
+    let execTime;
+  next();
+  execTime = Date.now() - startTime;
+  ctx.response.set('X-Response-Time', `${execTime} ms`);
+})
+
+if(!isProduction) {
+   const staticFiles = require('./staticFile');
+   app.use(staticFiles('static/', __dirname + 'static'));
+}
+
+app.use(controller())
 
 app.listen(config.port)
 

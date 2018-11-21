@@ -19,7 +19,9 @@
   "homepage": "https://github.com/daodaoApp/daodao_node#readme",
   "dependencies": {
     "koa": "^2.6.1",
-    "koa-bodyparser": "^4.2.1"
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "mime": "^2.3.1",
   },
   "devDependencies": {
     "eslint": "^5.8.0",

@@ -22,7 +22,7 @@ app.use((ctx, next) => {
 
 if(!isProduction) {
    const staticFiles = require('./staticFile');
-   app.use(staticFiles('static/', __dirname + 'static'));
+   app.use(staticFiles('/static', __dirname + '/static'));
 }
 
 app.use(controller())

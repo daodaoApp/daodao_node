@@ -20,10 +20,10 @@ app.use((ctx, next) => {
   ctx.response.set('X-Response-Time', `${execTime} ms`);
 })
 
-if(!isProduction) {
-   const staticFiles = require('./staticFile');
-   app.use(staticFiles('/static', __dirname + '/static'));
-}
+// if(!isProduction) {
+//    const staticFiles = require('./staticFile');
+//    app.use(staticFiles('/static', __dirname + '/static'));
+// }
 
 app.use(controller())
 
